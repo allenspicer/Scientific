@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F4B2FF21CC6858600AAE731 /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4B2FF11CC6858600AAE731 /* CalculatorBrain.m */; };
 		9F7AC6391CC534B900E95F5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AC6381CC534B900E95F5E /* main.m */; };
 		9F7AC63C1CC534B900E95F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AC63B1CC534B900E95F5E /* AppDelegate.m */; };
 		9F7AC63F1CC534B900E95F5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AC63E1CC534B900E95F5E /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F4B2FF01CC6858600AAE731 /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		9F4B2FF11CC6858600AAE731 /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 		9F7AC6341CC534B900E95F5E /* Scientific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scientific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7AC6381CC534B900E95F5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F7AC63A1CC534B900E95F5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 		9F7AC6361CC534B900E95F5E /* Scientific */ = {
 			isa = PBXGroup;
 			children = (
+				9F4B2FF01CC6858600AAE731 /* CalculatorBrain.h */,
+				9F4B2FF11CC6858600AAE731 /* CalculatorBrain.m */,
 				9F7AC63A1CC534B900E95F5E /* AppDelegate.h */,
 				9F7AC63B1CC534B900E95F5E /* AppDelegate.m */,
 				9F7AC63D1CC534B900E95F5E /* ViewController.h */,
@@ -152,6 +157,7 @@
 			files = (
 				9F7AC63F1CC534B900E95F5E /* ViewController.m in Sources */,
 				9F7AC63C1CC534B900E95F5E /* AppDelegate.m in Sources */,
+				9F4B2FF21CC6858600AAE731 /* CalculatorBrain.m in Sources */,
 				9F7AC6391CC534B900E95F5E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
