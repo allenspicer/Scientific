@@ -26,7 +26,7 @@ OperatorTypeNone,
 @property(assign) float operand1;
 @property(assign) float operand2;
 @property(assign) OperatorType operatorType;
-@property(assign) float userIsTyping;
+@property(assign) BOOL userIsTyping;
 
 
 -(NSString*) executeOperationOnOperands;

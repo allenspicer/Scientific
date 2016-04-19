@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    brain = [[CalculatorBrain alloc]init];
     self.displayLabel.text = @"0";
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -42,25 +43,34 @@
 }
 
 
-
 -(IBAction)operandTapped:(UIButton *)sender{
     if ([self.displayLabel.text isEqualToString:@"0"]) {
             self.displayLabel.text = sender.titleLabel.text;
     }else{
             if ([sender.titleLabel.text isEqualToString: @"."] && [self.displayLabel.text containsString:@"."]){
-            }else{
-                self.displayLabel.text = [self.displayLabel.text stringByAppendingString:sender.titleLabel.text];
+                }else{
+                    if (brain.userIsTyping == YES) {
+                        self.displayLabel.text = sender.titleLabel.text;
+                        brain = [[CalculatorBrain alloc]init];
+                            }else{
+                                brain.userIsTyping = NO;
+                            self.displayLabel.text = [self.displayLabel.text stringByAppendingString:sender.titleLabel.text];
+                    }
+                }
             }
-    }
 }
 
 -(IBAction)additionTapped:(UIButton *)sender{
     if (!brain){
         brain = [[CalculatorBrain alloc]init];
     }
+    //load local instance operator type to addition
     brain.operatorType = OperatorTypeAddition;
+    //create a mutable copy of the label text and save it to a local variable
     brain.operand1String = [self.displayLabel.text mutableCopy];
+    // convert the local varaible text to a local float variable
     brain.operand1 = [brain.operand1String floatValue];
+    
     self.displayLabel.text = @"0";
 }
 
@@ -97,13 +107,18 @@
 
 
 -(IBAction)equalTapped:(UIButton *)sender{
-    brain.operand2String = [self.displayLabel.text mutableCopy];
-    brain.operand2 = [brain.operand2String floatValue];
     
-    //set label to be result
-    self.displayLabel.text = [brain executeOperationOnOperands];
-    //reset brain
-    brain = [[CalculatorBrain alloc]init];
+  if((brain.operatorType != OperatorTypeNone)){
+      brain.operand2String = [self.displayLabel.text mutableCopy];
+      brain.operand2 = [brain.operand2String floatValue];
+      
+      //set label to be result
+      self.displayLabel.text = [brain executeOperationOnOperands];
+      
+      brain.userIsTyping = YES;
+        }else{}
+    
+
 
 }
 
@@ -113,7 +128,6 @@
     brain = [[CalculatorBrain alloc]init];
     //zero field
    self.displayLabel.text = @"0";
-    
 }
 
 
